@@ -16,3 +16,13 @@
 .title{
     font-size: 25px;
 }
+
+.headbtn {
+    margin: 2px;
+    width: 80px
+}
+
+.logbtn {
+    float: bottom;
+    bottom: -30px
+}

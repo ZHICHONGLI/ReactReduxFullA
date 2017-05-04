@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
+import LoginStatus from './LoginStatus';
 import logo from '../logo.svg';
-require('./HeaderBar.css')
+require('./HeaderBar.css');
 
 class HeaderBar extends Component {
 //    state = {  }
@@ -9,6 +10,9 @@ class HeaderBar extends Component {
             <div className="HeaderBar row">
                 <img src={logo} className="App-logo col-md-3" alt="logo" />
                 <span className="col-md-6 title">Welcome to React header section</span>
+                <span className="col-md-3 logbtn">
+                    <LoginStatus />
+                </span>
             </div>
         );
     }
