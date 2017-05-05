@@ -5,8 +5,14 @@ class LoginStatus extends Component {
     render() {
         return (
             <div>
-                <button className="btn btn-success headbtn">Login</button>
-                <button className="btn btn-primary headbtn">Sign up</button>
+                <div>
+                    <button className="btn btn-success headbtn">Login</button>
+                    <button className="btn btn-primary headbtn">Sign up</button>
+                </div>
+                <div>
+                    <span>User Name</span>
+                    <button className="btn btn-primary headbtn">Log out</button>
+                </div>
             </div>
         );
     }
