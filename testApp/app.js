@@ -2,7 +2,7 @@
 
  app.controller('loginCtrl', function($scope, $http){
     $scope.loadAlbums = () => {
-        $http.get('/albums').success((res) => {
+        $http.get('http:localhost:4300/albums').success((res) => {
             $scope.albumsList = res;
             console.log($scope.albumsList);
         }).error(res => {
