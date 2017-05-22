@@ -3,6 +3,7 @@ import logo from '../logo.svg';
 import './App.css';
 import TopBusket from './TopBusket.jsx';
 import HeaderBar from './HeaderBar.jsx';
+import {Link} from 'react-router-dom';
 
 class App extends Component {
   render() {
@@ -14,8 +15,7 @@ class App extends Component {
           To get started, edit <code>src/App.js</code> and save to reload.
         </div>
         <div className="App-body row">
-          Body
-        {/*<TopBusket / > */}
+          <Link to="/">Home</Link>     <Link to="/about">About</Link>
           <TopBusket />
         </div>
       </div>

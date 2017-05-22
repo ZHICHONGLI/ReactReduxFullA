@@ -5,12 +5,16 @@ import store from './stores';
 import { BrowserRouter, hashHistory, Route, IndexRoute } from 'react-router-dom';
 
 import App from './components/App';
+import About from './components/About';
 
 const routes = (
     <Provider store={store}>
         <div>
             <BrowserRouter history={hashHistory}>
-                <Route path="/" component={App} />
+                <div>
+                    <Route path="/" component={App} />
+                    <Route path="/about" component={About} />
+                </div>
             </BrowserRouter>
         </div>
     </Provider>
