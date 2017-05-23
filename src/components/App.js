@@ -15,7 +15,9 @@ class App extends Component {
           To get started, edit <code>src/App.js</code> and save to reload.
         </div>
         <div className="App-body row">
-          <Link to="/">Home</Link>     <Link to="/about">About</Link>
+          <Link to="/">Home</Link> | 
+           <Link to="/about">About</Link> | 
+           <Link to="/contact">Contact</Link>
           <TopBusket />
         </div>
       </div>
