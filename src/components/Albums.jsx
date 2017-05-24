@@ -1,22 +1,29 @@
 import React, { Component } from 'react';
-import { Link, Route } from 'react-router-dom';
+import { Link, Route, Switch } from 'react-router-dom';
 
 class About extends Component {
     render() {
-        const Content = (({match}) => {
-            (<div>
+        const Content = (props) => (
+            <div style={{backgroundColor: 'lightblue'}}>
+                <p>This Part is nested router</p>
                 <p>album name...</p>
-                <p>{match.params.name}</p>
-            </div>)
-        });
+                <div>
+                    name from Path params: 
+                    <span style={{backgroundColor: 'red', fontSize:'20px'}}>{props.match.params.name}</span>
+                </div>
+            </div>
+        );
         return (
             <div className="Albums">
                 <Link to="/">HOME</Link>
                 <hr />
                 <p>
-                    Albums
+                    Albums main component
                 </p>
-                <Route path="albums/:name" component={Content} />
+                <hr />
+                <Switch>
+                    <Route path='/albums/:name' component={Content} />
+                </Switch>
             </div>
         );
     }
