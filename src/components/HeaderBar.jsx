@@ -7,7 +7,7 @@ class HeaderBar extends Component {
 //    state = {  }
     render() {
         return (
-            <div className="HeaderBar row">
+            <div className="HeaderBar">
                 <img src={logo} className="App-logo col-md-3" alt="logo" />
                 <span className="col-md-6 title">Welcome to React header section</span>
                 <span className="col-md-3 logbtn">
