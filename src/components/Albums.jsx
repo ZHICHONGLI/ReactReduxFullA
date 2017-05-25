@@ -1,9 +1,10 @@
 import React, { Component } from 'react';
-import { Link, Route, Switch } from 'react-router-dom';
+import { Link, Route, Switch, Redirect } from 'react-router-dom';
 
-class About extends Component {
+class Albums extends Component {
     render() {
-        const Content = () => (
+
+        const Content = (props) => (
             <div style={{backgroundColor: 'lightblue'}}>
                 <Link to="/albums">Albums</Link>
                 <hr />
@@ -11,8 +12,7 @@ class About extends Component {
                 <p>album name...</p>
                 <div>
                     name from Path params: 
-                    {/* this component hasn't imported {match} so using this.props.match */}
-                    <span style={{backgroundColor: 'red', fontSize:'20px'}}>{this.props.match.params.name}</span>
+                    <span style={{backgroundColor: 'red', fontSize:'20px'}}>{props.match.params.name}</span>
                 </div>
             </div>
         );
@@ -23,7 +23,11 @@ class About extends Component {
                     Albums main component, should show all albums list
                 </p>
                 {/* using {match} to inherit this.props.match */}
-                <Link to={`${match.url}/new`}>New Album Page</Link>
+                <Link to={`${match.url}/new`}>
+                    New Album Page
+                </Link>
+                <br />
+                <Link to={`${match.url}/protected`}>To Protected Content</Link>
                 <hr />
             </div>
         );
@@ -41,4 +45,4 @@ class About extends Component {
     }
 }
 
-export default About;
+export default Albums;
