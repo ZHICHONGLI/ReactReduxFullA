@@ -1,12 +1,23 @@
 import React, {Component} from 'react';
+import {Link, withRouter} from 'react-router-dom';
+import { browserHistory } from 'react-router';
 
 class LoginStatus extends Component {
     state = {  }
+    constructor(props) {
+        super()
+    }
     render() {
+        const buttonNavi = () => {
+            // console.log(this.props)
+            // this.props.history.push('/login');
+            this.props.browserHistory.push('/login');
+        }
+
         return (
             <div>
                 <div>
-                    <button className="btn btn-success headbtn">Login</button>
+                    <button onClick={() => buttonNavi()} className="btn btn-success headbtn">Login</button>
                     <button className="btn btn-primary headbtn">Sign up</button>
                 </div>
                 <div>
@@ -18,4 +29,4 @@ class LoginStatus extends Component {
     }
 }
 
-export default LoginStatus;
+export default withRouter(LoginStatus);
