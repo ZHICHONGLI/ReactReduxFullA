@@ -50,6 +50,8 @@ const PrivateRoute = ({ component: Component, ...rest }) => (
     }} />
 );
 
+const history = createHistory();
+
 const routes = (
     <Provider store={store}>
         { /* ConnectedRouter will use the store from Provider automatically */ }
