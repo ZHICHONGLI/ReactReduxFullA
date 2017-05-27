@@ -1,17 +1,13 @@
 import React, {Component} from 'react';
-import {Link, withRouter} from 'react-router-dom';
-import { browserHistory } from 'react-router';
+import { withRouter } from 'react-router-dom'; // withRouter can let component access to history object
 
 class LoginStatus extends Component {
     state = {  }
-    constructor(props) {
-        super()
-    }
+
     render() {
         const buttonNavi = () => {
             // console.log(this.props)
-            // this.props.history.push('/login');
-            this.props.browserHistory.push('/login');
+            this.props.history.push('/login');
         }
 
         return (

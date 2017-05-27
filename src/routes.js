@@ -2,7 +2,8 @@ import React from 'react';
 import { Provider } from 'react-redux';
 import store from './stores';
 import { BrowserRouter as Router, hashHistory, Route, Link, Redirect, withRouter } from 'react-router-dom';
-
+import { ConnectedRouter, routerMiddleware, push } from 'react-router-redux';
+import createHistory from 'history/createBrowserHistory'
 import App from './components/App';
 import About from './components/About';
 import HeaderBar from './components/HeaderBar';
@@ -49,10 +50,10 @@ const PrivateRoute = ({ component: Component, ...rest }) => (
     }} />
 );
 
-
 const routes = (
     <Provider store={store}>
-        <Router history={hashHistory}>
+        { /* ConnectedRouter will use the store from Provider automatically */ }
+        <ConnectedRouter history={history}>
             <div>
                 <HeaderBar />
                 <AuthButton />
@@ -70,7 +71,7 @@ const routes = (
                 <Route path="/login" component={Login}/>
                 <PrivateRoute path="/protected" component={Protected} />
             </div>
-        </Router>
+        </ConnectedRouter>
     </Provider>
 );
 
