@@ -1,5 +1,5 @@
 import React from 'react';
-import { Provider, connect } from 'react-redux';
+import { Provider } from 'react-redux';
 import store from './stores';
 import { BrowserRouter as Router, hashHistory, Route, Link, Redirect, withRouter } from 'react-router-dom';
 import { ConnectedRouter, routerMiddleware, push } from 'react-router-redux';
@@ -52,7 +52,7 @@ const PrivateRoute = ({ component: Component, ...rest }) => (
 
 const history = createHistory();
 
-const routes = (
+const routes = 
     <Provider store={store}>
         { /* ConnectedRouter will use the store from Provider automatically */ }
         <ConnectedRouter history={history}>
@@ -75,6 +75,6 @@ const routes = (
             </div>
         </ConnectedRouter>
     </Provider>
-);
+;
 
 export {routes, fakeAuth};

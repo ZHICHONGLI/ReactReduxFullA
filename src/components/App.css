@@ -29,5 +29,9 @@
 
 .selected {
   font-weight: 25px;
+  color: red;
+}
+
+.selected:focus{
   color: red
 }

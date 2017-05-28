@@ -1,7 +1,6 @@
 import React, {Component} from 'react';
 import LoginStatus from './LoginStatus';
 import logo from '../logo.svg';
-import {history} from 'react-router-dom';
 require('./HeaderBar.css');
 
 class HeaderBar extends Component {
