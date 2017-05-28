@@ -1,18 +1,19 @@
 import React, { Component } from 'react';
 import './App.css';
 import TopBusket from './TopBusket.jsx';
-import {Link} from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
+import { connect } from 'react-redux';
 
 class App extends Component {
   render() {
     return (
       <div className="App container-fluid">
         <div className="App-body row">
-          <Link to="/">Home</Link> | 
-           <Link to="/about">About</Link> | 
-           <Link to="/contact">Contact</Link> |
-           <Link to="/albums">Albums</Link> |
-           <Link to="/protected">Protected</Link>
+          <NavLink to="/" exact activeClassName="selected">Home</NavLink> | 
+           <NavLink to="/about" activeClassName="selected">About</NavLink> | 
+           <NavLink to="/contact" activeClassName="selected">Contact</NavLink> |
+           <NavLink to="/albums" activeClassName="selected">Albums</NavLink> |
+           <NavLink to="/protected" activeClassName="selected">Protected</NavLink>
           <TopBusket />
         </div>
       </div>
@@ -20,4 +21,4 @@ class App extends Component {
   }
 }
 
-export default App;
+export default connect(state => ({state: state})) (App);

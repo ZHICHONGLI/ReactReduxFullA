@@ -1,11 +1,16 @@
-import React from 'react';
+import React, { Component } from 'react';
 import {
   Link,
   Redirect
 } from 'react-router-dom';
 import {fakeAuth} from '../routes.js';
 
-class Login extends React.Component {
+class Login extends Component {
+  componentDidUpdate(prevProps) {
+    if (this.props.location !== prevProps.location) {
+      console.log('Location Changed');
+    }
+  }
   state = {
     redirectToReferrer: false
   }
