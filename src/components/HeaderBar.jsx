@@ -15,6 +15,8 @@ class HeaderBar extends Component {
                 </span>
                 <span>TEST FOR MAC</span>
             </div>
+
+            
         );
     }
 }
