@@ -13,7 +13,6 @@ class HeaderBar extends Component {
                 <span className="col-md-3 logbtn">
                     <LoginStatus />
                 </span>
-                <span>TEST FOR MAC</span>
             </div>
 
             
