@@ -9,8 +9,9 @@ import About from './components/About';
 import HeaderBar from './components/HeaderBar';
 import Albums from './components/Albums';
 import Login from './components/Login';
+import UserInfo from './components/UserInfo';
 
-const Protected = () => <div>Protected Content</div>
+const Protected = () => <div><p>Protected Content</p><UserInfo /></div>
 
 const fakeAuth = {
     isAuthenticated: false,
