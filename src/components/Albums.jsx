@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
-import { Link, Route, Switch, Redirect } from 'react-router-dom';
+import { Link, Route, Switch } from 'react-router-dom';
+import { connect } from 'react-redux';
+import { bindActionCreators } from 'redux';
 
 class Albums extends Component {
     render() {
@@ -17,7 +19,7 @@ class Albums extends Component {
             </div>
         );
 
-        const mainAlbum = ({match}) => (
+        let mainAlbum = ({match}) => (
             <div>
                 <p>
                     Albums main component, should show all albums list
@@ -29,8 +31,14 @@ class Albums extends Component {
                 <br />
                 <Link to={`${match.url}/protected`}>To Protected Content</Link>
                 <hr />
+                <div>
+                    {this.props.Albums.map(album =>(<div><p>ALBUM NAME: {album.albumName}</p><p>ARTIST NAME: {album.artistName}</p></div>))}
+                </div>
+                <hr />
             </div>
         );
+
+        mainAlbum = connect(state => ({Albums: state.albums}))(mainAlbum);
 
         return (
             <div className="Albums">
@@ -45,4 +53,13 @@ class Albums extends Component {
     }
 }
 
-export default Albums;
+const mapStateToProps = state => ({
+    Albums: state.totalList.albums
+})
+
+/*
+const mapDispatchToProps = dispatch => ({
+    actions: bindActionCreators(actions, dispatch)
+})
+*/
+export default connect(mapStateToProps, undefined)(Albums);
