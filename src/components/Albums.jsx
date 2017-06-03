@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { Link, Route, Switch } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
+import fetch from 'isomorphic-fetch';
 import actions from '../actions/index';
 
 class Albums extends Component {
@@ -33,7 +34,7 @@ class Albums extends Component {
                 <Link to={`${match.url}/protected`}>To Protected Content</Link>
                 <hr />
                 <div>
-                    {this.props.Albums.map(album =>(<div key={album.id}><p>ALBUM NAME: {album.albumName}</p><p>ARTIST NAME: {album.artistName}</p></div>))}
+                    {this.props.Albums.map(album =>(<div key={album._id}><p>ALBUM NAME: {album.title}</p><p>ARTIST NAME: {album.artist}</p></div>))}
                 </div>
                 <hr />
                 <button onClick={() => actions.getItems()}>Thunk test</button>
@@ -41,11 +42,24 @@ class Albums extends Component {
         );
 
         mainAlbum = connect(state => ({Albums: state.albums}))(mainAlbum);
+        const fetchData = () => {
+            fetch('http://localhost:4300/albums'
+            ).then(response => 
+                // dispatch(actions.doneGetitems(data));
+                response.json()
+                // console.log('fetchData');
+                //console.log(response)
+            ).then( response => {
+                console.log(response);
+                //dispatch(actions.doneGetitems(response));
+            })
+        };
 
         return (
             <div className="Albums">
                 <Link to="/">HOME</Link>
                 <hr />
+                <button onClick={()=>fetchData()}>test in main</button>
                 <Switch>
                     <Route exact path={this.props.match.url} component={mainAlbum} />
                     <Route path={`${this.props.match.url}/:name`} component={Content} />

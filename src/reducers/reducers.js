@@ -1,9 +1,9 @@
 const initialState = {
     albums: [
         {
-            id: 1,
-            albumName: "First Album",
-            artistName: "First Artist",
+            _id: 1,
+            title: "First Album",
+            artist: "First Artist",
             gen: "Pop",
             year: "2017"
         }
@@ -18,8 +18,10 @@ export default (state = initialState, action) => {
             let newState = Object.assign({}, state, {albums: newAlbum});
         return newState;
         case 'DONE_GET_ITEMS':
-            console.log(action.payload);
-        return state;
+            newAlbum = [...state.albums, ...action.payload];
+            // console.log(newAlbum);
+            newState = Object.assign({}, state, {albums: newAlbum});
+        return newState;
         default:
         return state
     }

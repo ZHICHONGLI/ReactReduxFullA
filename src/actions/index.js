@@ -3,12 +3,14 @@ import fetch from 'isomorphic-fetch';
 const actions = {
     getItems: () => (dispatch) => {
         fetch('http://localhost:4300/albums'
-        ).then(response => {
+        ).then(response => 
             // dispatch(actions.doneGetitems(data));
-            response.json();
-            console.log('getitems.done');
-            console.log(response)
-        })
+            response.json() // CANNOT BE INSIDE A {}
+        ).then(data => {
+            dispatch(actions.doneGetitems(data));
+            // console.log(data)
+        }
+        )
         .catch(error => {
             // dispatch(actions.failGetitems(error));
             console.log('getitems.fail');
