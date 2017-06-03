@@ -9,6 +9,9 @@ const history = createHistory();
 // Build the middleware for intercepting and dispatching navigation actions
 const middleware = routerMiddleware(history);
 // Also apply our middleware for navigating
-const store = createStore(combined, applyMiddleware(thunk, middleware));
+const store = createStore(
+    combined,
+    applyMiddleware(thunk, middleware)
+);
 
 export default store;

@@ -2,10 +2,11 @@ import React, { Component } from 'react';
 import { Link, Route, Switch } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
+import actions from '../actions/index';
 
 class Albums extends Component {
     render() {
-
+        const actions = this.props.actions;
         const Content = (props) => (
             <div style={{backgroundColor: 'lightblue'}}>
                 <Link to="/albums">Albums</Link>
@@ -32,9 +33,10 @@ class Albums extends Component {
                 <Link to={`${match.url}/protected`}>To Protected Content</Link>
                 <hr />
                 <div>
-                    {this.props.Albums.map(album =>(<div><p>ALBUM NAME: {album.albumName}</p><p>ARTIST NAME: {album.artistName}</p></div>))}
+                    {this.props.Albums.map(album =>(<div key={album.id}><p>ALBUM NAME: {album.albumName}</p><p>ARTIST NAME: {album.artistName}</p></div>))}
                 </div>
                 <hr />
+                <button onClick={() => actions.getItems()}>Thunk test</button>
             </div>
         );
 
@@ -57,9 +59,9 @@ const mapStateToProps = state => ({
     Albums: state.totalList.albums
 })
 
-/*
+
 const mapDispatchToProps = dispatch => ({
     actions: bindActionCreators(actions, dispatch)
 })
-*/
-export default connect(mapStateToProps, undefined)(Albums);
+
+export default connect(mapStateToProps, mapDispatchToProps)(Albums);

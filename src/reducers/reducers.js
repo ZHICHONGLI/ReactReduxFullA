@@ -17,6 +17,9 @@ export default (state = initialState, action) => {
             let newAlbum = [...state.albums, action.payload];
             let newState = Object.assign({}, state, {albums: newAlbum});
         return newState;
+        case 'DONE_GET_ITEMS':
+            console.log(action.payload);
+        return state;
         default:
         return state
     }
