@@ -27,6 +27,22 @@ const actions = {
         type: 'FAIL_GET_ITEMS',
         payload: new Error(error),
         error: true
+    }),
+
+    getOneItem: (name) => (dispatch) => {
+        fetch('http://localhost:4300/albums/name/'+name
+        ).then(response =>
+            response.json()
+        ).then(response =>
+            dispatch(actions.doneGetOne(response))
+        ).catch(err => {
+            console.log(err)
+        });
+    },
+
+    doneGetOne: response => ({
+        type: 'DONE_GET_ONE',
+        payload: response
     })
 };
 

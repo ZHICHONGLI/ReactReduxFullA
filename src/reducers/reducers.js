@@ -7,7 +7,8 @@ const initialState = {
             gen: "Pop",
             year: "2017"
         }
-    ]
+    ],
+    currentAlbum: {}
 };
 
 
@@ -22,6 +23,8 @@ export default (state = initialState, action) => {
             // console.log(newAlbum);
             newState = Object.assign({}, state, {albums: newAlbum});
         return newState;
+        case 'DONE_GET_ONE':
+        return Object.assign({}, state, {currentAlbum: action.payload})
         default:
         return state
     }
