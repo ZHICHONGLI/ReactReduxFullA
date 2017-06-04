@@ -4,10 +4,12 @@ import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import fetch from 'isomorphic-fetch';
 import actions from '../actions/index';
+import Content from './AlbumContent';
 
 class Albums extends Component {
     render() {
         const actions = this.props.actions;
+        /*
         const Content = (props) => (
             <div style={{backgroundColor: 'lightblue'}}>
                 <Link to="/albums">Albums</Link>
@@ -20,7 +22,7 @@ class Albums extends Component {
                 </div>
             </div>
         );
-
+        */
         let mainAlbum = ({match}) => (
             <div>
                 <p>
@@ -30,14 +32,12 @@ class Albums extends Component {
                 <Link to={`${match.url}/new`}>
                     New Album Page
                 </Link>
-                <br />
-                <Link to={`${match.url}/protected`}>To Protected Content</Link>
                 <hr />
                 <div>
-                    {this.props.Albums.map(album =>(<div key={album._id}><p>ALBUM NAME: {album.title}</p><p>ARTIST NAME: {album.artist}</p></div>))}
+                    {this.props.Albums.map(album =>(<div key={album._id}><p>ALBUM NAME: {album.title}</p><p>ARTIST NAME: {album.artist}</p><Link to={`${match.url}/${album.title}`}>detail</Link><hr /></div>))}
                 </div>
                 <hr />
-                <button onClick={() => actions.getItems()}>Thunk test</button>
+                <button onClick={() => actions.getItems()}>All Albums</button>
             </div>
         );
 
@@ -59,7 +59,6 @@ class Albums extends Component {
             <div className="Albums">
                 <Link to="/">HOME</Link>
                 <hr />
-                <button onClick={()=>fetchData()}>test in main</button>
                 <Switch>
                     <Route exact path={this.props.match.url} component={mainAlbum} />
                     <Route path={`${this.props.match.url}/:name`} component={Content} />
