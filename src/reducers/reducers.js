@@ -20,7 +20,6 @@ export default (state = initialState, action) => {
         return newState;
         case 'DONE_GET_ITEMS':
             newAlbum = [...state.albums, ...action.payload];
-            // console.log(newAlbum);
             newState = Object.assign({}, state, {albums: newAlbum});
         return newState;
         case 'DONE_GET_ONE':

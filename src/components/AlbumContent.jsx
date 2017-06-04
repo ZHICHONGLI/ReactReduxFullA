@@ -17,7 +17,6 @@ class Content extends Component {
             console.log(err)
         });
         */
-        // console.log(this.props)
         this.props.actions.getOneItem(this.props.match.params.name);
     }
     render() {

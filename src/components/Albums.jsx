@@ -9,20 +9,6 @@ import Content from './AlbumContent';
 class Albums extends Component {
     render() {
         const actions = this.props.actions;
-        /*
-        const Content = (props) => (
-            <div style={{backgroundColor: 'lightblue'}}>
-                <Link to="/albums">Albums</Link>
-                <hr />
-                <p>This Part is nested router</p>
-                <p>album name...</p>
-                <div>
-                    name from Path params: 
-                    <span style={{backgroundColor: 'red', fontSize:'20px'}}>{props.match.params.name}</span>
-                </div>
-            </div>
-        );
-        */
         let mainAlbum = ({match}) => (
             <div>
                 <p>
@@ -45,13 +31,9 @@ class Albums extends Component {
         const fetchData = () => {
             fetch('http://localhost:4300/albums'
             ).then(response => 
-                // dispatch(actions.doneGetitems(data));
                 response.json()
-                // console.log('fetchData');
-                //console.log(response)
             ).then( response => {
                 console.log(response);
-                //dispatch(actions.doneGetitems(response));
             })
         };
 
