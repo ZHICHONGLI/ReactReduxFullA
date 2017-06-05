@@ -23,6 +23,9 @@ export default (state = initialState, action) => {
             newState = Object.assign({}, state, {albums: newAlbum});
         return newState;
         case 'DONE_GET_ONE':
+            if(action.payload == null){
+                action.payload = {}
+            }
         return Object.assign({}, state, {currentAlbum: action.payload})
         default:
         return state
