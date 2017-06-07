@@ -1,8 +1,8 @@
 import React from 'react';
 import { Provider } from 'react-redux';
 import store from './stores';
-import { BrowserRouter as Router, hashHistory, Route, Link, Redirect, withRouter } from 'react-router-dom';
-import { ConnectedRouter, routerMiddleware, push } from 'react-router-redux';
+import { BrowserRouter as Route, Link, Redirect, withRouter } from 'react-router-dom';
+import { ConnectedRouter } from 'react-router-redux';
 import createHistory from 'history/createBrowserHistory'
 import App from './components/App';
 import About from './components/About';
