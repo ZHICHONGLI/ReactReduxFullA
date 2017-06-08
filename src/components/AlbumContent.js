@@ -4,6 +4,7 @@ import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
 import fetch from 'isomorphic-fetch';
 import actions from '../actions/index';
+import '../sass/AlbumContent.scss';
 
 class Content extends Component {
     componentDidMount() {
@@ -21,7 +22,7 @@ class Content extends Component {
     }
     render() {
         return (
-            <div style={{backgroundColor: 'lightblue'}}>
+            <div className="albumcontent">
                 <Link to="/albums">Albums</Link>
                 <hr />
                 <p>This Part is nested router</p>
@@ -31,7 +32,7 @@ class Content extends Component {
                     <span style={{backgroundColor: 'red', fontSize:'20px'}}>{this.props.match.params.name}</span>
                 </div>
                 <hr />
-                <div>
+                <div className="fetchedalbum">
                     <p>FROM ACTION FETCH TO REDUCER STORE</p>
                     <p>TITLE: {this.props.Album.title}</p>
                     <p>ARTIST: {this.props.Album.artist}</p>

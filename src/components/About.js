@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import LoginStatus from './LoginStatus';
 import {Link} from 'react-router-dom';
+import '../sass/About.scss';
 
 class About extends Component {
     render() {
@@ -8,7 +9,7 @@ class About extends Component {
             <div className="About">
                 <Link to="/">HOME</Link>
                 <hr />
-                <p>
+                <p className='content'>
                     This is About Page
                 </p>
             </div>

@@ -1,0 +1,10 @@
+.albumcontent{
+    background-color: lightblue;
+    .fetchedalbum{
+        background-color: lightcoral;
+        margin: 10px;
+        &:hover{
+            color: darkcyan
+        }
+    };
+}
