@@ -1,10 +1,14 @@
 .albumcontent{
     background-color: lightblue;
+    padding-left: 10px;
     .fetchedalbum{
         background-color: lightcoral;
         margin: 10px;
+        padding-left: 5px;
         &:hover{
-            color: darkcyan
+            background-color: darkcyan;
+            color: white;
+            font-weight: 800
         }
     };
 }
