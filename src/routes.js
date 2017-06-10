@@ -13,6 +13,7 @@ import UserInfo from './components/UserInfo';
 
 const Protected = () => <div><p>Protected Content</p><UserInfo /></div>
 
+// PUT isAuthenticated into Reducer for global using!!
 const fakeAuth = {
     isAuthenticated: false,
     authenticate(cb) {
@@ -55,7 +56,7 @@ const history = createHistory();
 
 const routes = 
     <Provider store={store}>
-        { /* ConnectedRouter will use the store from Provider automatically */ }
+        { /* TODO ConnectedRouter will use the store from Provider automatically */ }
         <ConnectedRouter history={history}>
             <div>
                 <HeaderBar />
