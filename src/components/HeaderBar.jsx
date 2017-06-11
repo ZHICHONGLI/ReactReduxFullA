@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import LoginStatus from './LoginStatus';
+import {fakeAuth} from '../routes';
 import logo from '../logo.svg';
 require('./HeaderBar.css');
 
@@ -12,6 +13,7 @@ class HeaderBar extends Component {
 
     render() {
         let data = this.state.date.toJSON;
+        let fakeAuth1 = {...fakeAuth};
         return (
             <div className="HeaderBar">
                 <img src={logo} className="App-logo col-md-3" alt="logo" />
@@ -20,7 +22,8 @@ class HeaderBar extends Component {
                     {this.state.auth?'log in':<LoginStatus />}
                 </span>
                 <span>{data}</span>
-                <button onClick={()=> console.log(this.props.auth+this.state.date)}>test</button>
+                <button onClick={()=> console.log(fakeAuth1.isAuthenticated+this.state.date)}>test</button>
+                {fakeAuth1.isAuthenticated? <span>TRUE</span>: <span>FALSE</span>}
             </div>
         );
     }
