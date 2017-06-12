@@ -23,5 +23,3 @@ class HeaderBar extends Component {
 }
 
 export default HeaderBar;
-
-// TODO Connect isAuthenticated from store with component!
