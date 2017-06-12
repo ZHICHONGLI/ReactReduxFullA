@@ -23,6 +23,6 @@
 }
 
 .logbtn {
-    float: bottom;
-    bottom: -30px
+    /* float: bottom; */
+    bottom: -30px;
 }

@@ -1,0 +1,21 @@
+.HeaderBar{
+    background-color: #222;
+    height: 120px;
+    padding: 20px;
+    color: white;
+    display: flex;
+    width: 100%;
+    align-items: center;
+    .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+    height: 80px;
+    };
+    .title{
+        font-size: 25px;
+        text-align: center;
+    };
+    .logbtn {
+        float: bottom;
+        bottom: -30px
+    }
+}
