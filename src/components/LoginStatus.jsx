@@ -45,7 +45,7 @@ class LoginStatus extends Component {
                     :
                     (
                     <div>
-                        <span>Welcome, User Name</span>
+                        <span>Welcome, User Name </span>
                         <button className="btn btn-primary headbtn" onClick={()=>logOut()}>Log out</button>
                         <p>{this.state.date.toJSON()}</p>
                     </div>

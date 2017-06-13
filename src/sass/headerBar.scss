@@ -16,6 +16,10 @@
     };
     .logbtn {
         float: bottom;
-        bottom: -30px
+        bottom: -30px;
+        .headbtn{
+            margin: 2px;
+            width: 70px
+        }
     }
 }

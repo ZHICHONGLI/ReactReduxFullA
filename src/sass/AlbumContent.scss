@@ -3,8 +3,9 @@
     padding-left: 10px;
     .fetchedalbum{
         background-color: lightcoral;
-        margin: 10px;
+        margin-left: 10px;
         padding-left: 5px;
+        padding-bottom: 10px;
         &:hover{
             background-color: darkcyan;
             color: white;

@@ -34,9 +34,15 @@ class Content extends Component {
                 <hr />
                 <div className="fetchedalbum">
                     <p>FROM ACTION FETCH TO REDUCER STORE</p>
-                    <p>TITLE: {this.props.Album.title}</p>
-                    <p>ARTIST: {this.props.Album.artist}</p>
-                    <p>YEAR: {this.props.Album.released}</p>
+                    {
+                        (this.props.Album === undefined) ?
+                        (<h2>Album Cannot Found...</h2>) 
+                        : (<div>
+                                <p>TITLE: {this.props.Album.title}</p>
+                                <p>ARTIST: {this.props.Album.artist}</p>
+                                <p>YEAR: {this.props.Album.released}</p>
+                            </div>)
+                    }
                 </div>
             </div>
         );
