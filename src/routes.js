@@ -60,7 +60,7 @@ const routes =
         <ConnectedRouter history={history}>
             <div>
                 <HeaderBar />
-                <AuthButton />
+                {/*<AuthButton />*/}
                 <App />
                 <Route exact path="/" render={()=><h2>HOME PAGE</h2>} />
                 <Route path="/about" component={About} />

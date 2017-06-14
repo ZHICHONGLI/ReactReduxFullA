@@ -9,12 +9,12 @@ class App extends React.Component {
     return (
       <div className="App container-fluid">
         <div className="App-body row">
-          <NavLink to="/" exact activeClassName="selected">Home</NavLink> | 
-          <NavLink to="/about" activeClassName="selected">About</NavLink> | 
-          <NavLink to="/contact" activeClassName="selected">Contact</NavLink> |
-          <NavLink to="/albums" activeClassName="selected">Albums</NavLink> |
+          <NavLink to="/" exact activeClassName="selected">Home</NavLink> |&nbsp; 
+          <NavLink to="/about" activeClassName="selected">About</NavLink> |&nbsp; 
+          <NavLink to="/contact" activeClassName="selected">Contact</NavLink> |&nbsp;
+          <NavLink to="/albums" activeClassName="selected">Albums</NavLink> |&nbsp;
           <NavLink to="/protected" activeClassName="selected">Protected</NavLink>           
-          <TopBusket />
+          {/*<TopBusket />*/}
         </div>
       </div>
     );
