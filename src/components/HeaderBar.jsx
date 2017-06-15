@@ -1,12 +1,10 @@
 import React, {Component} from 'react';
 import LoginStatus from './LoginStatus';
 import logo from '../logo.svg';
-// require('./HeaderBar.css');
 import '../sass/headerBar.scss';
 
 
 class HeaderBar extends Component {
-//    state = {  }
 
     render() {
         
