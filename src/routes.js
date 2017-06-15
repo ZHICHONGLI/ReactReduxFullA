@@ -10,6 +10,7 @@ import HeaderBar from './components/HeaderBar';
 import Albums from './components/Albums';
 import Login from './components/Login';
 import UserInfo from './components/UserInfo';
+import Home from './components/Home';
 
 const Protected = () => <div><p>Protected Content</p><UserInfo /></div>
 
@@ -62,7 +63,7 @@ const routes =
                 <HeaderBar />
                 {/*<AuthButton />*/}
                 <App />
-                <Route exact path="/" render={()=><h2>HOME PAGE</h2>} />
+                <Route exact path="/" component={Home} />
                 <Route path="/about" component={About} />
                 <Route path="/contact" render={() => (
                     <div>
