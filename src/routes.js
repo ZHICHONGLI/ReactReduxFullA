@@ -66,8 +66,6 @@ const routes =
                 <Route path="/about" component={About} />
                 <Route path="/contact" render={() => (
                     <div>
-                        <Link to="/">HOME</Link>
-                        <hr />
                         <h1>CONTACT INFO</h1>
                     </div>
                 )} />

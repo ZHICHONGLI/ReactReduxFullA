@@ -5,12 +5,13 @@ import { bindActionCreators } from 'redux';
 import fetch from 'isomorphic-fetch';
 import actions from '../actions/index';
 import Content from './AlbumContent';
+import '../sass/Albums.scss';
 
 class Albums extends Component {
     render() {
         const actions = this.props.actions;
         let mainAlbum = ({match}) => (
-            <div>
+            <div className='main-album'>
                 <p>
                     Albums main component, should show all albums list
                 </p>
@@ -39,8 +40,6 @@ class Albums extends Component {
 
         return (
             <div className="Albums">
-                <Link to="/">HOME</Link>
-                <hr />
                 <Switch>
                     <Route exact path={this.props.match.url} component={mainAlbum} />
                     <Route path={`${this.props.match.url}/:name`} component={Content} />
