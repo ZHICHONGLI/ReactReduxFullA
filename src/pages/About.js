@@ -1,5 +1,4 @@
 import React, {Component} from 'react';
-import LoginStatus from './LoginStatus';
 import {Link} from 'react-router-dom';
 import '../sass/About.scss';
 

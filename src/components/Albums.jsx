@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { Link, Route, Switch } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
-import fetch from 'isomorphic-fetch';
+// import fetch from 'isomorphic-fetch';
 import actions from '../actions/index';
 import Content from './AlbumContent';
 import '../sass/Albums.scss';
@@ -29,6 +29,7 @@ class Albums extends Component {
         );
 
         mainAlbum = connect(state => ({Albums: state.albums}))(mainAlbum);
+        /*
         const fetchData = () => {
             fetch('http://localhost:4300/albums'
             ).then(response => 
@@ -37,7 +38,7 @@ class Albums extends Component {
                 console.log(response);
             })
         };
-
+        */
         return (
             <div className="Albums">
                 <Switch>

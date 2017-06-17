@@ -1,8 +1,8 @@
 import React from 'react';
 import './App.css';
-import TopBusket from './TopBusket.jsx';
+// import TopBusket from './TopBusket.jsx';
 import { NavLink } from 'react-router-dom';
-import { connect } from 'react-redux';
+// import { connect } from 'react-redux';
 
 class App extends React.Component {
   render() {

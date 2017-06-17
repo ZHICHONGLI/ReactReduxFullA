@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
-import fetch from 'isomorphic-fetch';
+// import fetch from 'isomorphic-fetch';
 import actions from '../actions/index';
 import '../sass/AlbumContent.scss';
 

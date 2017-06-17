@@ -5,12 +5,13 @@ import { BrowserRouter as Router, Route, Link, Redirect, withRouter } from 'reac
 import { ConnectedRouter } from 'react-router-redux';
 import createHistory from 'history/createBrowserHistory'
 import App from './components/App';
-import About from './components/About';
 import HeaderBar from './components/HeaderBar';
 import Albums from './components/Albums';
 import Login from './components/Login';
 import UserInfo from './components/UserInfo';
-import Home from './components/Home';
+import Home from './pages/Home';
+import About from './pages/About';
+
 
 const Protected = () => <div><p>Protected Content</p><UserInfo /></div>
 
@@ -27,6 +28,7 @@ const fakeAuth = {
     }
 };
 
+/*
 const AuthButton = withRouter(({ history }) => (
   fakeAuth.isAuthenticated ? (
     <p>
@@ -38,6 +40,7 @@ const AuthButton = withRouter(({ history }) => (
     <p>You are not logged in.</p>
   )
 ));
+*/
 
 const PrivateRoute = ({ component: Component, ...rest }) => (
     <Route {...rest} render={props => {
