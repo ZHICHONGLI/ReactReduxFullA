@@ -1,3 +1,15 @@
 .home-page{
-    margin: 0 10px 0 10px
+    margin: 0 10px 0 10px;
+    .home-popular{
+        .popular-header{
+        text-align: center;
+        };
+        .pop-album{
+            text-align: center;
+            margin: 2px
+        };
+        background-color: lightgray;
+        padding: 5px
+    }
+    
 }
