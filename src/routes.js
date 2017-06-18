@@ -1,7 +1,7 @@
 import React from 'react';
 import { Provider } from 'react-redux';
 import store from './stores';
-import { BrowserRouter as Router, Route, Link, Redirect, withRouter } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Link, Redirect, withRouter, Switch } from 'react-router-dom';
 import { ConnectedRouter } from 'react-router-redux';
 import createHistory from 'history/createBrowserHistory'
 import App from './components/App';
@@ -11,6 +11,7 @@ import Login from './components/Login';
 import UserInfo from './components/UserInfo';
 import Home from './pages/Home';
 import About from './pages/About';
+import dbAlbum from './pages/DbAlbum';
 
 
 const Protected = () => <div><p>Protected Content</p><UserInfo /></div>
@@ -74,6 +75,7 @@ const routes =
                     </div>
                 )} />
                 <Route path="/albums" component={Albums} />
+                <Route path="/dbalbum/:id" component={dbAlbum} />
                 <Route path="/login" component={Login}/>
                 <PrivateRoute path="/protected" component={Protected} />
             </div>

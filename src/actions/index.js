@@ -2,14 +2,14 @@ import fetch from 'isomorphic-fetch';
 
 const popularAlbumsMock = [
         {
-            _id: 1,
+            _id: 27047560,
             title: "Popular Album 1",
             artist: "First Artist",
             gen: "Pop",
             year: "2017",
             img: "https://img1.doubanio.com/lpic/s29465057.jpg"
         },{
-            _id: 2,
+            _id: 26992306,
             title: "Popular Album 2",
             artist: "2nd Artist",
             gen: "Pop",

@@ -24,7 +24,7 @@ class Home extends Component {
                     <div className='row'>
                     {
                         this.props.popularAlbums.map(popAlbum => (
-                            <Link to={{pathname: 'albums/'+popAlbum.title}} key={popAlbum._id}>
+                            <Link to={{pathname: 'dbalbum/'+popAlbum._id}} key={popAlbum._id}>
                                 <div className='col-sm-4 pop-album'>
                                 <img src={popAlbum.img} width='300' className='img-thumbnail'></img>
                                 <p>title: {popAlbum.title}</p>
