@@ -24,17 +24,26 @@ class Home extends Component {
                     <div className='row'>
                     {
                         this.props.popularAlbums.map(popAlbum => (
-                            <Link to={{pathname: 'dbalbum/'+popAlbum._id}} key={popAlbum._id}>
-                                <div className='col-sm-4 pop-album'>
-                                <img src={popAlbum.img} width='300' className='img-thumbnail'></img>
-                                <p>title: {popAlbum.title}</p>
-                                <p>artist: {popAlbum.artist}</p>
-                                <p>gen: {popAlbum.gen}</p>                                
-                                </div>
-                            </Link>
-                            
+                            <div className='col-sm-4 pop-album' key={popAlbum._id}>
+                                <Link to={{pathname: 'dbalbum/'+popAlbum._id}}>
+                                    <img src={popAlbum.img} width='300' className='img-thumbnail'></img>
+                                </Link>
+                                <Link to={{pathname: 'dbalbum/'+popAlbum._id}}>
+                                    <br/>
+                                    <span>title: {popAlbum.title}</span><br/>
+                                    <span>artist: {popAlbum.artist}</span><br/>
+                                    <span>gen: {popAlbum.gen}</span>
+                                </Link>                             
+                            </div>
                         ))
                     }
+                    </div>
+                </section>
+                <section className="popular-artists">
+                    <h3 className="title">Popular Aitists</h3>
+                    <hr/>
+                    <div className="row">
+                    
                     </div>
                 </section>
                 

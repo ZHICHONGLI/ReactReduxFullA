@@ -10,6 +10,13 @@
         };
         background-color: lightgray;
         padding: 5px
+    };
+    .popular-artists{
+        padding: 5px;
+        background-color: lightpink;
+        .title{
+            text-align: center
+        }
     }
     
 }
