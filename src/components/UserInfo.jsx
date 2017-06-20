@@ -1,16 +1,24 @@
 import React, {Component} from 'react';
+import {fakeAuth} from '../routes.js';
 import "../sass/UserInfo.scss";
 
 class logC extends Component {
-    state = { inputValue: '' }
+    constructor() {
+        super();
+        this.state = { inputValue: '' }
+    }
+    
     render() {
+        let right = fakeAuth.accessRight;
+        {fakeAuth.accessRight?right=1:right=0}
         return (
             <div className="userInfo">
                 <h2>User Info</h2>
                 <p>This component is for user info</p>
                 <textarea rows={'5'} value={this.state.inputValue} onChange={(e)=>this.setState({inputValue: e.target.value})}/>
                 <hr />
-                <button className='btn btn-defaults' onClick={()=>{alert(this.state.inputValue)}}>Save</button>
+                <button onClick={()=>fakeAuth.rightToggle()}>.....</button>
+                <button disabled={!right} className='btn btn-defaults' onClick={()=>{alert(this.state.inputValue)}}>Save</button>
                 <p>{this.state.inputValue}</p>
                 <hr />
                 <addNew />

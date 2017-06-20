@@ -19,12 +19,18 @@ const Protected = () => <div><p>Protected Content</p><UserInfo /></div>
 // PUT isAuthenticated into Reducer for global using!!
 const fakeAuth = {
     isAuthenticated: false,
+    accessRight: false,
     authenticate(cb) {
         this.isAuthenticated = true;
         setTimeout(cb, 100) //fake async
     },
     signout(cb) {
         this.isAuthenticated = false;
+        setTimeout(cb, 100)
+    },
+    rightToggle(cb) {
+        this.accessRight = !this.accessRight;
+        console.log(this.accessRight);
         setTimeout(cb, 100)
     }
 };
