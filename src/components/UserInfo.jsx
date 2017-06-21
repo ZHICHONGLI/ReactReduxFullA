@@ -5,7 +5,7 @@ import "../sass/UserInfo.scss";
 class logC extends Component {
     constructor() {
         super();
-        this.state = { inputValue: '' }
+        this.state = { inputValue: '', accRight: fakeAuth.accessRight }
     }
     
     render() {
@@ -17,8 +17,7 @@ class logC extends Component {
                 <p>This component is for user info</p>
                 <textarea rows={'5'} value={this.state.inputValue} onChange={(e)=>this.setState({inputValue: e.target.value})}/>
                 <hr />
-                <button onClick={()=>fakeAuth.rightToggle()}>.....</button>
-                <button disabled={!right} className='btn btn-defaults' onClick={()=>{alert(this.state.inputValue)}}>Save</button>
+                <button disabled={!this.props.right} className='btn btn-defaults' onClick={()=>{alert(this.state.inputValue)}}>Save</button>
                 <p>{this.state.inputValue}</p>
                 <hr />
                 <addNew />

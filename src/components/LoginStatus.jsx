@@ -37,7 +37,7 @@ class LoginStatus extends Component {
         return (
             <div>
                 {
-                    !fakeAuth1.isAuthenticated ?
+                    !fakeAuth.isAuthenticated ?
                     (<div>
                         <button onClick={() => buttonNavi()} className="btn btn-success headbtn">Login</button>
                         <button className="btn btn-primary headbtn" onClick={()=>signUp()}>Sign up</button>

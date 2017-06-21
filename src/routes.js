@@ -14,8 +14,6 @@ import About from './pages/About';
 import dbAlbum from './pages/DbAlbum';
 
 
-const Protected = () => <div><p>Protected Content</p><UserInfo /></div>
-
 // PUT isAuthenticated into Reducer for global using!!
 const fakeAuth = {
     isAuthenticated: false,
@@ -34,6 +32,8 @@ const fakeAuth = {
         setTimeout(cb, 100)
     }
 };
+
+const Protected = () => <div><p>Protected Content</p><UserInfo right={fakeAuth.accessRight} /></div>
 
 /*
 const AuthButton = withRouter(({ history }) => (
