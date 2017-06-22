@@ -9,11 +9,23 @@
             margin: 2px
         };
         background-color: lightgray;
-        padding: 5px
+        padding: 5px;
+        margin-bottom: 5px
     };
     .popular-artists{
         padding: 5px;
+        margin-bottom: 5px;
+        width: 49.8%;
         background-color: lightpink;
+        .title{
+            text-align: center
+        }
+    };
+    .popular-singles{
+        padding: 5px;
+        width: 49.8%;
+        float: right;
+        background-color: lightsteelblue;
         .title{
             text-align: center
         }

@@ -39,12 +39,16 @@ class Home extends Component {
                     }
                     </div>
                 </section>
-                <section className="popular-artists">
-                    <h3 className="title">Popular Aitists</h3>
+                <section className="popular-artists col-sm-6">
+                    <h3 className="title">Hot Aitists</h3>
                     <hr/>
                     <div className="row">
                     
                     </div>
+                </section>
+                <section className="popular-singles col-sm-6">
+                    <h3 className="title">Hot Singles</h3>
+                    <hr />
                 </section>
                 
             </div>

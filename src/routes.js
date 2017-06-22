@@ -12,6 +12,7 @@ import UserInfo from './components/UserInfo';
 import Home from './pages/Home';
 import About from './pages/About';
 import dbAlbum from './pages/DbAlbum';
+import Artists from './pages/Artists';
 
 
 // PUT isAuthenticated into Reducer for global using!!
@@ -75,11 +76,7 @@ const routes =
                 <App />
                 <Route exact path="/" component={Home} />
                 <Route path="/about" component={About} />
-                <Route path="/contact" render={() => (
-                    <div>
-                        <h1>CONTACT INFO</h1>
-                    </div>
-                )} />
+                <Route path="/artists" component={Artists} />
                 <Route path="/albums" component={Albums} />
                 <Route path="/dbalbum/:id" component={dbAlbum} />
                 <Route path="/login" component={Login}/>

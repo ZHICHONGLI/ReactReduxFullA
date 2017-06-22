@@ -11,9 +11,10 @@ class App extends React.Component {
         <div className="App-body row">
           <NavLink to="/" exact activeClassName="selected">Home</NavLink> |&nbsp;
           <NavLink to="/albums" activeClassName="selected">Albums</NavLink> |&nbsp;
+          <NavLink to="/artists" activeClassName="selected">Artist</NavLink> |&nbsp;
           <NavLink to="/protected" activeClassName="selected">Protected</NavLink> |&nbsp;
-          <NavLink to="/about" activeClassName="selected">About</NavLink> |&nbsp;
-          <NavLink to="/contact" activeClassName="selected">Contact</NavLink>          
+          <NavLink to="/about" activeClassName="selected">About</NavLink>
+                    
           {/*<TopBusket />*/}
         </div>
       </div>
