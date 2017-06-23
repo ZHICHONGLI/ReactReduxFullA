@@ -1,11 +1,12 @@
 import React, {Component} from 'react';
 import { withRouter } from 'react-router-dom'; // withRouter can let component access to history object
+import { connect } from 'react-redux';
 import {fakeAuth} from '../routes.js';
 
 class LoginStatus extends Component {
 
-    constructor () {
-        super();
+    constructor (props) {
+        super(props);
         this.state = {date: new Date()};
     }
 
@@ -37,6 +38,18 @@ class LoginStatus extends Component {
         return (
             <div>
                 {
+                    this.props.loginStatus ?
+                        <div>
+                            <span>Welcome, User Name </span>
+                            <button className="btn btn-primary headbtn" onClick={()=>logOut()}>Log out</button>
+                            <p>{this.state.date.toJSON()}</p>
+                        </div> :
+                        <div>
+                            <button onClick={() => buttonNavi()} className="btn btn-success headbtn">Login</button>
+                            <button className="btn btn-primary headbtn" onClick={()=>signUp()}>Sign up</button>
+                        </div>
+                }
+                {/*
                     !fakeAuth.isAuthenticated ?
                     (<div>
                         <button onClick={() => buttonNavi()} className="btn btn-success headbtn">Login</button>
@@ -50,10 +63,13 @@ class LoginStatus extends Component {
                         <p>{this.state.date.toJSON()}</p>
                     </div>
                     )
-                }
+                */}
             </div>
         );
     }
 }
 
-export default withRouter(LoginStatus);
+const mapStateToProps = state => ({
+    loginStatus: state.totalList.loginStatus
+})
+export default withRouter(connect(mapStateToProps, null)(LoginStatus));

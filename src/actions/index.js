@@ -70,6 +70,16 @@ const actions = {
     getPopularSucc: mock => ({
         type: 'GET_HOME_POPULAR',
         payload: mock
+    }),
+
+    logIn: () => ({
+        type: 'LOG_IN_SUCC',
+        payload: true
+    }),
+
+    logOut: () => ({
+        type: 'LOG_OUT',
+        payload: false
     })
 
 };

@@ -3,7 +3,8 @@ import { Provider } from 'react-redux';
 import store from './stores';
 import { BrowserRouter as Router, Route, Link, Redirect, withRouter, Switch } from 'react-router-dom';
 import { ConnectedRouter } from 'react-router-redux';
-import createHistory from 'history/createBrowserHistory'
+import createHistory from 'history/createBrowserHistory';
+import actions from './actions';
 import App from './components/App';
 import HeaderBar from './components/HeaderBar';
 import Albums from './components/Albums';
@@ -21,10 +22,12 @@ const fakeAuth = {
     accessRight: false,
     authenticate(cb) {
         this.isAuthenticated = true;
+        store.dispatch(actions.logIn());
         setTimeout(cb, 100) //fake async
     },
     signout(cb) {
         this.isAuthenticated = false;
+        store.dispatch(actions.logOut());
         setTimeout(cb, 100)
     },
     rightToggle(cb) {

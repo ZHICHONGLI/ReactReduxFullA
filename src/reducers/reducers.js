@@ -8,7 +8,8 @@ const initialState = {
             year: "2017"
         }
     ],
-    currentAlbum: {}
+    currentAlbum: {},
+    loginStatus: false
 };
 
 
@@ -26,7 +27,11 @@ export default (state = initialState, action) => {
             if(action.payload == null){
                 action.payload = undefined
             }
-        return Object.assign({}, state, {currentAlbum: action.payload})
+        return Object.assign({}, state, {currentAlbum: action.payload});
+        case 'LOG_IN_SUCC':
+        return Object.assign({}, state, {loginStatus: action.payload});
+        case 'LOG_OUT':
+        return Object.assign({}, state, {loginStatus: action.payload});
         default:
         return state
     }
