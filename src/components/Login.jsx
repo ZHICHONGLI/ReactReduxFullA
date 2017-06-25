@@ -4,6 +4,7 @@ import {
   Redirect
 } from 'react-router-dom';
 import {fakeAuth} from '../routes.js';
+import '../sass/Login.scss';
 
 class Login extends Component {
   componentDidUpdate(prevProps) {
@@ -32,10 +33,9 @@ class Login extends Component {
     }
     
     return (
-      <div>
-        <Link to="/">Home</Link>
-        <p>You must log in to view the page at {from.pathname}</p>
-        <button onClick={this.login}>Log in</button>
+      <div className="log-in">
+        <h3>You must log in to view the page at {from.pathname}</h3>
+        <button className="btn btn-default" onClick={this.login}>Log in</button>
       </div>
     )
   }
