@@ -1,0 +1,21 @@
+.navbars {
+    height: 35px;
+    width: 75%;
+    margin: 10px;
+    padding-top: 6px;
+    border: solid 1px lightblue;
+    background-color: lightyellow;
+    .path-li {
+        float: left;
+        height: 35px;
+        padding-left: 25px;
+        list-style: none;
+
+        & Link:visited {
+            display: block;
+            float: left;
+            height: 35px;
+            color: lightcoral;
+        }
+    }
+}
