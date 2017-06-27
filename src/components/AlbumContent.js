@@ -4,6 +4,7 @@ import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
 // import fetch from 'isomorphic-fetch';
 import actions from '../actions/index';
+import BreadCrumb from '../components/BreadCrumb';
 import '../sass/AlbumContent.scss';
 
 class Content extends Component {
@@ -20,10 +21,24 @@ class Content extends Component {
         */
         this.props.actions.getOneItem(this.props.match.params.name);
     }
+    crumbs = [
+        {
+            name: 'Home',
+            path: '/'
+        },
+        {
+            name: 'Albums',
+            path: '/albums'
+        },
+        {
+            name: `${this.props.match.params.name}`,
+            path: ''
+        }
+    ];
     render() {
         return (
             <div className="albumcontent">
-                <Link to="/albums">Albums</Link>
+                <BreadCrumb crumbs={this.crumbs} />
                 <hr />
                 <p>This Part is nested router</p>
                 <p>album name...</p>

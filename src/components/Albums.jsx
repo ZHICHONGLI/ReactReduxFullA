@@ -5,13 +5,25 @@ import { bindActionCreators } from 'redux';
 // import fetch from 'isomorphic-fetch';
 import actions from '../actions/index';
 import Content from './AlbumContent';
+import BreadCrumb from '../components/BreadCrumb.js';
 import '../sass/Albums.scss';
+
+const crumbs = [
+    {
+        name: 'Home',
+        path: '/'
+    },{
+        name: 'Albums',
+        path: '/albums'
+    }
+];
 
 class Albums extends Component {
     render() {
         const actions = this.props.actions;
         let mainAlbum = ({match}) => (
             <div className='main-album'>
+                <BreadCrumb crumbs={crumbs}/>
                 <p>
                     Albums main component, should show all albums list
                 </p>
